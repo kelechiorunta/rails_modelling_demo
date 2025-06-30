@@ -8,6 +8,6 @@ class PostsController < ApplicationController
       format.json { render json: @existing_user, status: :ok }
     end
 
-    UserMailer.with(user: @existing_user).welcome_email.deliver_now
+    UserMailer.with(user: @existing_user).welcome_email.deliver_later
   end
 end
