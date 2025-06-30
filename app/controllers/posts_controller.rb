@@ -7,6 +7,7 @@ class PostsController < ApplicationController
       format.html # renders show.html.erb by default
       format.json { render json: @existing_user, status: :ok }
     end
+
     UserMailer.with(user: @existing_user).welcome_email.deliver_now
   end
 end
