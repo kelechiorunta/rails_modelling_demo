@@ -1,2 +1,8 @@
 <%= button_to "Logout", session_path(@existing_user), method: :delete %>
-<h1>Hello There Post For <%= @existing_user.name %></h1>
+<h1>Post From <%= @existing_user.name %></h1>
+<% if @existing_user %>
+  <%= link_to 'Welcome', welcome_url %>
+  <%# <%= url_for(controller: 'users',action: 'new') %> 
+<% else %>
+  <%= link_to 'Please Login', root_path %>
+<% end %>
