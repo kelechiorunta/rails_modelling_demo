@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get "/signup", to: "sessions#register", as: "signup"
   post "/login", to: "sessions#login", as: "perform_login"
   post "/signup", to: "sessions#signup", as: "perform_signup"
+  get "/welcome", to: "users#welcome", as: "welcome"
   
   # Defines the root path route ("/")
   # root "posts#index"

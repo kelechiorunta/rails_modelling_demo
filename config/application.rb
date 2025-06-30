@@ -23,5 +23,14 @@ module MicroReddit
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    # 
+    # Demo to add preview paths to the list of previews of mailer preview
+    # config.action_mailer.preview_paths << "#{Rails.root}/lib/mailer_previews"
+    # config.action_mailer.default_url_options = { host: "localhost" }
+    config.action_mailer.default_url_options = { host: "localhost", port: 3032 }
+
+    # Set the default asset host for the mail to be consistent across the application
+    config.action_mailer.asset_host = "http://localhost:3032"
+
   end
 end

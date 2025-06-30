@@ -1,4 +1,10 @@
-<h1>User#welcome_email</h1>
+<h1>
+  <%# Perform fragment caching %>
+  <% cache do %>
+   <h1> Welcome <%= @user.name %> </h1>
+  <% end %>
+
+</h1>
 
 <p>
   <%= @user.name %>, find me in app/views/user_mailer/welcome_email.html.erb
