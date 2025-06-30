@@ -1,10 +1,10 @@
 class UserMailer < ApplicationMailer
+  before_action :set_logged_user
   default from: 'oruntakelechi86@gmail.com'
 
   def welcome_email
     @greeting = "Hi"
-    @user = params[:user]
-
+   
     mail(
       to: @user.email,
       subject: "#{@greeting} - Welcome to My Awesome Site!"
@@ -15,4 +15,9 @@ class UserMailer < ApplicationMailer
       format.text { render text: "user" }
     end
   end
+
+  private
+    def set_logged_user
+      @user = params[:user]
+    end
 end
