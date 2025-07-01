@@ -4,6 +4,8 @@ class UserMailer < ApplicationMailer
 
   def welcome_email
     @greeting = "Hi"
+    attachments.inline['image.png'] = File.read(Rails.root.join('app', 'assets', 'images', 'image.png'))
+
    
     mail(
       to: @user.email,

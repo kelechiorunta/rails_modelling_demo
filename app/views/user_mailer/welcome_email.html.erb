@@ -7,5 +7,6 @@
 </h1>
 
 <p>
+  <%= image_tag attachments['image.png'].url, alt: 'My Photo', class: 'photos' %>
   <%= @user.name %>, find me in app/views/user_mailer/welcome_email.html.erb
 </p>
