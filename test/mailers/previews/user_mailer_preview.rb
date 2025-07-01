@@ -7,7 +7,7 @@ class UserMailerPreview < ActionMailer::Preview
     # instance variable in a controller because we have configured
     # the default host across the application in config/application.rb
     # as config.action_mailer.default_url_options = { host: "localhost", port: "3032" }
-    UserMailer.with(user: @user).welcome_email
+    UserMailer.with(user: @user ||= User.first).welcome_email
   end
 
 end
