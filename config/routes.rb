@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   post "/signup", to: "sessions#signup", as: "perform_signup"
   get "/welcome", to: "users#welcome", as: "welcome"
   
+  scope module: "admin" do
+    resources :comments
+  end
   # Defines the root path route ("/")
   # root "posts#index"
 end
