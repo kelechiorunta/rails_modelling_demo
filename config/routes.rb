@@ -20,6 +20,10 @@ Rails.application.routes.draw do
   scope module: "admin" do
     resources :comments
   end
+
+  concern :commentable do
+    resources :comments
+  end
   # Defines the root path route ("/")
   # root "posts#index"
 end
