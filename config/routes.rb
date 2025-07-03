@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get "/", to: "users#index"
   get "/users/", to: "users#index"
   get "/users/:name", to: "users#name"
+  get "/comments/:id", to: "comments#identity" , constraints: {id: /^[A-Z]\ / } 
   get "/login", to: "sessions#new", as: "login"
   get "/signup", to: "sessions#register", as: "signup"
   post "/login", to: "sessions#login", as: "perform_login"
